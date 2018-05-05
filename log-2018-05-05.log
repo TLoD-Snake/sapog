@@ -1,0 +1,180 @@
+[34m[INFO][0;39m - [2018-05-05 03:47:46,858] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[34m[INFO][0;39m - [2018-05-05 03:48:00,559] - [com.mysterria.ik.sapog.WsActor]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#899670389]
+[34m[INFO][0;39m - [2018-05-05 03:48:06,477] - [com.mysterria.ik.sapog.WsActor]  Connection 1 sent a message WiredMessage(211122)
+[34m[INFO][0;39m - [2018-05-05 04:03:41,353] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[34m[INFO][0;39m - [2018-05-05 04:03:51,400] - [com.mysterria.ik.sapog.WsActor]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#719241030]
+[34m[INFO][0;39m - [2018-05-05 04:03:56,846] - [com.mysterria.ik.sapog.WsActor]  Connection 1 sent a message WiredMessage(11)
+[34m[INFO][0;39m - [2018-05-05 04:04:00,130] - [com.mysterria.ik.sapog.WsActor]  Connection 1 closed
+[34m[INFO][0;39m - [2018-05-05 04:04:26,253] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[34m[INFO][0;39m - [2018-05-05 04:04:28,952] - [com.mysterria.ik.sapog.WsActor]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#1868231125]
+[34m[INFO][0;39m - [2018-05-05 04:04:30,670] - [com.mysterria.ik.sapog.WsActor]  Connection 1 sent a message WiredMessage(11)
+[34m[INFO][0;39m - [2018-05-05 04:04:33,258] - [com.mysterria.ik.sapog.WsActor]  Connection 1 closed, alive clients: Map(1 -> Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#1868231125])
+[34m[INFO][0;39m - [2018-05-05 04:04:56,023] - [com.mysterria.ik.sapog.WsActor]  Connection 2 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-7-2-actorRefSource#-1492851041]
+[34m[INFO][0;39m - [2018-05-05 04:04:57,929] - [com.mysterria.ik.sapog.WsActor]  Connection 2 sent a message WiredMessage(11)
+[34m[INFO][0;39m - [2018-05-05 04:05:00,799] - [com.mysterria.ik.sapog.WsActor]  Connection 2 closed, alive clients: Map(2 -> Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-7-2-actorRefSource#-1492851041])
+[34m[INFO][0;39m - [2018-05-05 04:08:17,230] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[34m[INFO][0;39m - [2018-05-05 04:08:59,811] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[39m[TRACE][0;39m - [2018-05-05 04:09:07,308] - [com.mysterria.ik.sapog.WsActor]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#-1288612776]
+[39m[TRACE][0;39m - [2018-05-05 04:09:10,817] - [com.mysterria.ik.sapog.WsActor]  Connection 1 sent a message WiredMessage(11)
+[34m[INFO][0;39m - [2018-05-05 04:20:54,644] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[39m[TRACE][0;39m - [2018-05-05 04:21:05,935] - [com.mysterria.ik.sapog.WsActor]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#1723348688]
+[1;31m[ERROR][0;39m - [2018-05-05 04:21:07,318] - [com.mysterria.ik.sapog.WsActor]  Connection 1 encountered protocol error: Unrecognized token 'aaaa': was expecting ('true', 'false' or 'null')
+ at [Source: {"foo": aaaa}; line: 1, column: 13]
+com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaaa': was expecting ('true', 'false' or 'null')
+ at [Source: {"foo": aaaa}; line: 1, column: 13]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1702)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:558)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2839)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:1903)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:749)
+	at play.api.libs.json.jackson.JsValueDeserializer.deserialize(JacksonJson.scala:179)
+	at play.api.libs.json.jackson.JsValueDeserializer.deserialize(JacksonJson.scala:128)
+	at play.api.libs.json.jackson.JsValueDeserializer.deserialize(JacksonJson.scala:123)
+	at com.fasterxml.jackson.databind.ObjectMapper._readValue(ObjectMapper.java:3786)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2115)
+	at play.api.libs.json.jackson.JacksonJson$.parseJsValue(JacksonJson.scala:235)
+	at play.api.libs.json.StaticBinding$.parseJsValue(StaticBinding.scala:16)
+	at play.api.libs.json.Json$.parse(Json.scala:171)
+	at com.mysterria.ik.sapog.JsonWiredProtocol.thaw(WiredProtocol.scala:15)
+	at com.mysterria.ik.sapog.WsEndpoint.$anonfun$endPointFlow$1(WsEndpoint.scala:24)
+	at akka.stream.impl.fusing.Map$$anon$9.onPush(Ops.scala:51)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:411)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$shortCircuitBatch(ActorGraphInterpreter.scala:735)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:761)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[34m[INFO][0;39m - [2018-05-05 04:21:40,724] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[39m[TRACE][0;39m - [2018-05-05 04:21:42,660] - [com.mysterria.ik.sapog.WsActor]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#1019729161]
+[34m[INFO][0;39m - [2018-05-05 04:23:21,437] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[39m[TRACE][0;39m - [2018-05-05 04:23:25,802] - [com.mysterria.ik.sapog.WsActor]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#1987444637]
+[39m[TRACE][0;39m - [2018-05-05 04:23:27,447] - [com.mysterria.ik.sapog.WsActor]  Connection 1 closed
+[34m[INFO][0;39m - [2018-05-05 04:23:27,451] - [com.mysterria.ik.sapog.WsEndpoint]  Flow regular completion
+[34m[INFO][0;39m - [2018-05-05 04:23:49,921] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[39m[TRACE][0;39m - [2018-05-05 04:23:52,138] - [com.mysterria.ik.sapog.WsActor]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#1129068350]
+[39m[TRACE][0;39m - [2018-05-05 04:23:53,756] - [com.mysterria.ik.sapog.WsActor]  Connection 1 closed
+[34m[INFO][0;39m - [2018-05-05 04:23:53,759] - [com.mysterria.ik.sapog.WsEndpoint]  Flow com.mysterria.ik.sapog.WsEndpoint@735906a9 regular completion
+[39m[TRACE][0;39m - [2018-05-05 04:23:56,958] - [com.mysterria.ik.sapog.WsActor]  Connection 2 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-4-2-actorRefSource#1076413907]
+[39m[TRACE][0;39m - [2018-05-05 04:23:58,843] - [com.mysterria.ik.sapog.WsActor]  Connection 2 closed
+[34m[INFO][0;39m - [2018-05-05 04:23:58,843] - [com.mysterria.ik.sapog.WsEndpoint]  Flow com.mysterria.ik.sapog.WsEndpoint@735906a9 regular completion
+[39m[TRACE][0;39m - [2018-05-05 04:24:03,932] - [com.mysterria.ik.sapog.WsActor]  Connection 3 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-6-2-actorRefSource#-402990671]
+[34m[INFO][0;39m - [2018-05-05 04:25:07,945] - [com.mysterria.ik.sapog.WsEndpoint]  Flow com.mysterria.ik.sapog.WsEndpoint@735906a9 regular completion
+[34m[INFO][0;39m - [2018-05-05 04:28:59,553] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[39m[TRACE][0;39m - [2018-05-05 04:29:08,406] - [com.mysterria.ik.sapog.WsActor]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#-1678265390]
+[1;31m[ERROR][0;39m - [2018-05-05 04:29:11,175] - [com.mysterria.ik.sapog.WsActor]  Connection 1 encountered protocol error: Unrecognized token 'aaaa': was expecting ('true', 'false' or 'null')
+ at [Source: {"foo": aaaa}; line: 1, column: 13]
+com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaaa': was expecting ('true', 'false' or 'null')
+ at [Source: {"foo": aaaa}; line: 1, column: 13]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1702)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:558)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2839)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:1903)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:749)
+	at play.api.libs.json.jackson.JsValueDeserializer.deserialize(JacksonJson.scala:179)
+	at play.api.libs.json.jackson.JsValueDeserializer.deserialize(JacksonJson.scala:128)
+	at play.api.libs.json.jackson.JsValueDeserializer.deserialize(JacksonJson.scala:123)
+	at com.fasterxml.jackson.databind.ObjectMapper._readValue(ObjectMapper.java:3786)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2115)
+	at play.api.libs.json.jackson.JacksonJson$.parseJsValue(JacksonJson.scala:235)
+	at play.api.libs.json.StaticBinding$.parseJsValue(StaticBinding.scala:16)
+	at play.api.libs.json.Json$.parse(Json.scala:171)
+	at com.mysterria.ik.sapog.JsonWiredProtocol.thaw(WiredProtocol.scala:15)
+	at com.mysterria.ik.sapog.WsEndpoint.$anonfun$endPointFlow$1(WsEndpoint.scala:26)
+	at akka.stream.impl.fusing.Map$$anon$9.onPush(Ops.scala:51)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:411)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$shortCircuitBatch(ActorGraphInterpreter.scala:735)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:761)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[34m[INFO][0;39m - [2018-05-05 04:29:11,178] - [com.mysterria.ik.sapog.WsEndpoint]  Flow com.mysterria.ik.sapog.WsEndpoint@31a89535 regular completion
+[39m[TRACE][0;39m - [2018-05-05 04:29:11,186] - [com.mysterria.ik.sapog.WsActor]  Connection 1 closed
+[34m[INFO][0;39m - [2018-05-05 05:03:35,247] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[39m[TRACE][0;39m - [2018-05-05 05:03:52,275] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#-1464342789]
+[39m[TRACE][0;39m - [2018-05-05 05:04:01,171] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 sent a message WiredMessage(1)
+[39m[TRACE][0;39m - [2018-05-05 05:04:27,988] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 sent a message WiredMessage(1)
+[34m[INFO][0;39m - [2018-05-05 05:05:28,131] - [com.mysterria.ik.sapog.WsEndpoint]  Flow com.mysterria.ik.sapog.WsEndpoint@41610eb regular completion
+[39m[TRACE][0;39m - [2018-05-05 05:05:28,132] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 closed
+[34m[INFO][0;39m - [2018-05-05 05:05:33,706] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[39m[TRACE][0;39m - [2018-05-05 05:05:44,360] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#-1176290456]
+[39m[TRACE][0;39m - [2018-05-05 05:05:51,269] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 sent a message WiredMessage(1)
+[39m[TRACE][0;39m - [2018-05-05 05:06:06,653] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 sent a message WiredMessage(3)
+[39m[TRACE][0;39m - [2018-05-05 05:06:21,893] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 sent a message WiredMessage(4)
+[39m[TRACE][0;39m - [2018-05-05 05:07:15,898] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 2 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-14-2-actorRefSource#-727657046]
+[34m[INFO][0;39m - [2018-05-05 05:07:15,901] - [com.mysterria.ik.sapog.WsEndpoint]  Flow com.mysterria.ik.sapog.WsEndpoint@52b6593b regular completion
+[39m[TRACE][0;39m - [2018-05-05 05:07:15,906] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 closed
+[31m[WARN][0;39m - [2018-05-05 05:07:43,864] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 2 encountered protocol error: Unrecognized token 'sadasd': was expecting ('true', 'false' or 'null')
+ at [Source: sadasd; line: 1, column: 13]
+com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'sadasd': was expecting ('true', 'false' or 'null')
+ at [Source: sadasd; line: 1, column: 13]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1702)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:558)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2839)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:1903)
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:749)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:3850)
+	at com.fasterxml.jackson.databind.ObjectMapper._readValue(ObjectMapper.java:3772)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2115)
+	at play.api.libs.json.jackson.JacksonJson$.parseJsValue(JacksonJson.scala:235)
+	at play.api.libs.json.StaticBinding$.parseJsValue(StaticBinding.scala:16)
+	at play.api.libs.json.Json$.parse(Json.scala:171)
+	at com.mysterria.ik.sapog.JsonWiredProtocol.thaw(WiredProtocol.scala:15)
+	at com.mysterria.ik.sapog.WsEndpoint.$anonfun$endPointFlow$1(WsEndpoint.scala:26)
+	at akka.stream.impl.fusing.Map$$anon$9.onPush(Ops.scala:51)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:411)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$shortCircuitBatch(ActorGraphInterpreter.scala:735)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:761)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+[34m[INFO][0;39m - [2018-05-05 05:07:43,865] - [com.mysterria.ik.sapog.WsEndpoint]  Flow com.mysterria.ik.sapog.WsEndpoint@52b6593b regular completion
+[39m[TRACE][0;39m - [2018-05-05 05:07:43,866] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 2 closed
+[34m[INFO][0;39m - [2018-05-05 05:12:24,869] - [com.mysterria.ik.sapog.Server$]  Server online at http://localhost:8080/
+[39m[TRACE][0;39m - [2018-05-05 05:12:35,042] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 opened for client Actor[akka://helloAkkaHttpServer/system/StreamSupervisor-0/flow-2-2-actorRefSource#756304144]
+[39m[TRACE][0;39m - [2018-05-05 05:12:41,176] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 sent a message WiredMessage(4)
+[39m[TRACE][0;39m - [2018-05-05 05:12:50,481] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 sent a message WiredMessage(5)
+[39m[TRACE][0;39m - [2018-05-05 05:12:55,731] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 sent a message WiredMessage(-5)
+[39m[TRACE][0;39m - [2018-05-05 05:13:55,920] - [com.mysterria.ik.sapog.WsEndpoint]  Flow com.mysterria.ik.sapog.WsEndpoint@402b658b regular completion
+[39m[TRACE][0;39m - [2018-05-05 05:13:55,921] - [com.mysterria.ik.sapog.Server$$anon$1]  Connection 1 closed
