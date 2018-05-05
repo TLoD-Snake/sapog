@@ -1,11 +1,12 @@
 package com.mysterria.ik.sapog
 
 import akka.NotUsed
-import akka.actor.{ ActorSystem, Props }
-import akka.http.scaladsl.model.ws.{ Message, TextMessage }
+import akka.actor.{ActorSystem, Props}
+import akka.http.scaladsl.model.ws.{Message, TextMessage}
 import akka.stream.OverflowStrategy
-import akka.stream.scaladsl.{ Flow, Sink, Source }
+import akka.stream.scaladsl.{Flow, Sink, Source}
 import com.typesafe.scalalogging.LazyLogging
+import play.api.libs.json.{JsValue, Json}
 
 import scala.concurrent.ExecutionContext
 import scala.reflect.ClassTag
@@ -45,6 +46,8 @@ class WsEndpoint[M: ClassTag](wp: WiredProtocol[M], anactor: => WsActor[M])(impl
       .via(endPointFlow(connId))
       .map {
         case msg: M => TextMessage.Strict(wp.freeze(msg))
+        case msg: JsValue => TextMessage.Strict(Json.stringify(msg))
+        case msg: String => TextMessage.Strict(msg)
       }
       .via(reportErrorsFlow)
 

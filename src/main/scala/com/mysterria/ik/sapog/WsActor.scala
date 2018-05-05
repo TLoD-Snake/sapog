@@ -27,22 +27,35 @@ abstract class WsActor[M: ClassTag]() extends Actor with LazyLogging {
 
     case Protocol.ProtocolError(connId, cause) =>
       logger.warn(s"Connection $connId encountered protocol error: ${cause.getMessage}", cause)
-      clients.get(connId) foreach { client =>
-        client ! PoisonPill
-      }
+      onProtocolError(connId,  cause)
   }
 
-  def dropAllExcept(except: Long): Unit = {
-    clients.filterKeys(_ != except).foreach(_._2 ! PoisonPill)
+  def dropAllExcept(except: Long, dropMessage: Option[Any] = None): Unit = {
+    clients.filterKeys(_ != except).foreach{ case (connId, actorRef) =>
+      dropMessage foreach { m => actorRef ! m }
+      actorRef ! PoisonPill
+    }
   }
 
   def reply(connId: Long, message: Any): Unit = {
     clients.get(connId).foreach(_ ! message)
   }
 
+  def replyAll(message: Any): Unit = {
+    clients.foreach { case (_, c) => c ! message}
+  }
+
+  def drop(connId: Long, message: Option[Any] = None): Unit = {
+    clients.get(connId).foreach { c =>
+      message foreach { m => c ! m}
+      c ! PoisonPill
+    }
+  }
+
   def onConnectionOpened(connId: Long): Unit = ()
   def onConnectionClosed(connId: Long): Unit = ()
   def onMessageReceived(connId: Long, message: M): Unit
+  def onProtocolError(connId: Long, cause: Throwable): Unit = drop(connId)
 }
 
 object WsActor {
