@@ -1,4 +1,4 @@
-package com.mysterria.ik.sapog
+package com.mysterria.ik.sapog.websocket
 
 import play.api.libs.json.{ Json, OFormat }
 

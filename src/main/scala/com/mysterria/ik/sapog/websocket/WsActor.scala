@@ -1,4 +1,5 @@
-package com.mysterria.ik.sapog
+package com.mysterria.ik.sapog.websocket
+
 import akka.actor.{ Actor, ActorRef, PoisonPill, Status }
 import com.typesafe.scalalogging.LazyLogging
 

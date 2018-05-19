@@ -1,4 +1,4 @@
-package com.mysterria.ik.sapog
+package com.mysterria.ik.sapog.websocket
 
 import akka.NotUsed
 import akka.actor.{ ActorSystem, Props }

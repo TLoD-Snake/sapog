@@ -1,24 +1,26 @@
 package com.mysterria.ik.sapog.restapi.routes
 
 import akka.actor.ActorSystem
-import akka.http.scaladsl.model.{ HttpEntity, HttpResponse, ResponseEntity }
+import akka.http.scaladsl.model.{ HttpEntity, HttpResponse }
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.{ ExceptionHandler, Route }
 import com.mysterria.ik.sapog.SapogSizeService
+import com.mysterria.ik.sapog.di.RouteProvider
 import com.mysterria.ik.sapog.restapi.ErrorResponse
 import de.heikoseeberger.akkahttpplayjson.PlayJsonSupport
+import javax.inject.Inject
 import play.api.libs.json.{ Json, OFormat }
 
 import scala.concurrent.ExecutionContext
 
-class SizeRoute(actorSystem: ActorSystem) extends PlayJsonSupport {
+class SizeRoute @Inject() (actorSystem: ActorSystem) extends PlayJsonSupport with RouteProvider {
   import SizeRoute._
   import akka.http.scaladsl.model.StatusCodes._
 
   implicit val ec: ExecutionContext = actorSystem.dispatcher
   private val sizeService = SapogSizeService.instance
 
-  val route: Route = pathPrefix("size") {
+  override val route: Route = pathPrefix("size") {
     handleExceptions(eh) {
       pathPrefix("list") {
         path(Segment ~ Slash.?) { origin => // Don't use  `~ Slash.?` in real application! Only for demo!
@@ -48,12 +50,12 @@ object SizeRoute {
 
   val eh = ExceptionHandler {
     case t: Throwable =>
-      extractUri { uri =>
-        //println(s"Request to $uri could not be handled normally")
-        val error = ErrorResponse(t.getMessage)
-        val e = HttpEntity(Json.stringify(Json.toJson(error)))
-        complete(HttpResponse(InternalServerError, entity = e))
-      }
+      //extractUri { uri =>
+      //println(s"Request to $uri could not be handled normally")
+      val error = ErrorResponse(t.getMessage)
+      val e = HttpEntity(Json.stringify(Json.toJson(error)))
+      complete(HttpResponse(InternalServerError, entity = e))
+    //}
   }
 
   case class SizeListResponse(sizes: Seq[Double])
