@@ -9,7 +9,9 @@ lazy val root = (project in file(".")).
       scalacOptions ++= Seq("-deprecation", "-feature", "-encoding", "utf8", "-Ywarn-dead-code", "-unchecked", "-Xlint", "-Ywarn-unused-import")
     )),
     name := "Sapog Interstellar Foundation",
-    
+
+    resolvers += Resolver.bintrayRepo("hseeberger", "maven"),
+
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-http"            % akkaHttpVersion,
       "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
@@ -17,6 +19,8 @@ lazy val root = (project in file(".")).
       "com.typesafe.akka" %% "akka-stream"          % akkaVersion,
 
       "com.typesafe.play" %%  "play-json"           % "2.6.9",
+      "de.heikoseeberger" %% "akka-http-play-json" % "1.20.1",
+
       "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
       "ch.qos.logback"    %  "logback-classic"      % "1.2.3"
     )

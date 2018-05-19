@@ -4,10 +4,11 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Route
 import akka.stream.ActorMaterializer
+import com.mysterria.ik.sapog.restapi.RestApiHttpRoute
 import com.typesafe.scalalogging.LazyLogging
 import play.api.libs.json.Json
 
-import scala.concurrent.{Await, ExecutionContext}
+import scala.concurrent.{ Await, ExecutionContext }
 import scala.concurrent.duration._
 import scala.concurrent.duration.Duration
 
@@ -40,7 +41,10 @@ object Server extends App with Routes with LazyLogging {
       drop(connId, Some(Json.obj("error" -> "input", "details" -> cause.getMessage)))
     }
   })
-  lazy val routes: Route = wsRoute("ws", wsEndpoint.websocketFlow)
+
+  lazy val routes: Route =
+    wsRoute("ws", wsEndpoint.websocketFlow) ~
+      new RestApiHttpRoute(system).route
 
   Http().bindAndHandle(routes, interface, port)
 
