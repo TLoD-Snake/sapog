@@ -1,13 +1,15 @@
 package com.mysterria.ik.sapog.di
 
 import akka.actor.ActorSystem
+import com.google.inject.name.Names
 import com.google.inject.{ AbstractModule, Provides }
-import com.mysterria.ik.sapog.{ Constants, Server }
 import com.mysterria.ik.sapog.restapi.routes.SizeRoute
 import com.mysterria.ik.sapog.websocket.WebSocketService
+import com.mysterria.ik.sapog.{ Constants, SapogNewsBroadcastService, SapogNewsEditorService, Server }
 import com.typesafe.config.Config
 import javax.inject.Singleton
 import net.codingwell.scalaguice.ScalaModule
+import rx.lang.scala.Observable
 
 import scala.concurrent.ExecutionContext
 
@@ -27,6 +29,13 @@ class SapogModule extends AbstractModule with ScalaModule with RouteBindings {
     // Adding REST API modules
     bind[SizeRoute].in[Singleton]
     routeBinder(binder).addBinding.to[SizeRoute]
+
+    bind[Observable[String]]
+      .annotatedWith(Names.named("SapogNewsSubject"))
+      .toProvider[SapogNewsEditorService]
+
+    bind[SapogNewsBroadcastService].in[Singleton]
+    routeBinder(binder).addBinding.to[SapogNewsBroadcastService]
 
     // Lets say we want to add new module with set of routes for manipulating shoes manufacturer info.
     //bind[ManufacturerRoute].in[Singleton]

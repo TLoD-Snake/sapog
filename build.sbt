@@ -21,6 +21,7 @@ lazy val root = (project in file(".")).
       "com.typesafe.play" %%  "play-json"           % "2.6.9",
       "de.heikoseeberger" %% "akka-http-play-json" % "1.20.1",
       "net.codingwell"    %% "scala-guice"          % "4.2.0",
+      "io.reactivex"      %% "rxscala"              % "0.26.5",
 
       "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
       "ch.qos.logback"    %  "logback-classic"      % "1.2.3"
