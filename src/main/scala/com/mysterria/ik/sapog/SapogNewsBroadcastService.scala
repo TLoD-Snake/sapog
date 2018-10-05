@@ -2,7 +2,7 @@ package com.mysterria.ik.sapog
 
 import akka.actor.PoisonPill
 import akka.http.scaladsl.model.ws.{ Message, TextMessage }
-import akka.http.scaladsl.server.{ Directives, Route }
+import akka.http.scaladsl.server.Route
 import akka.stream.OverflowStrategy
 import akka.stream.scaladsl.{ Flow, Sink, Source }
 import com.mysterria.ik.sapog.di.RouteProvider
@@ -18,7 +18,7 @@ import scala.util.Failure
  * at any time with no other service code being affected
  */
 class SapogNewsBroadcastService @Inject() (@Named("SapogNewsSubject") newsSubject: Provider[Observable[String]])(implicit ec: ExecutionContext)
-  extends RouteProvider with RoutesHelper with Directives with LazyLogging {
+  extends RouteProvider with RoutesHelper with LazyLogging {
 
   override lazy val route: Route = wsRoute("ws/ntf", routeHandler)
 

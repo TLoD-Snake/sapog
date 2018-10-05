@@ -12,7 +12,8 @@ import rx.lang.scala.subjects.PublishSubject
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration._
 
-class SapogNewsEditorService @Inject() (implicit as: ActorSystem, ec: ExecutionContext) extends Provider[Observable[String]] with LazyLogging {
+class SapogNewsEditorService @Inject() (implicit as: ActorSystem, ec: ExecutionContext)
+  extends Provider[Observable[String]] with LazyLogging {
   private val subjectRef = new AtomicReference(PublishSubject[String])
   private def subject = subjectRef.get()
 
